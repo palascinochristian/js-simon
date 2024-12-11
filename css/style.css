@@ -29,11 +29,14 @@ body {
 }
 
 
-.numbers .row, .timer .row {
+
+.numbers .row{
     display: flex;
     justify-content: space-around;
-    height: auto;
+    align-items: center;
+    height: 100%;
 }
+
 
 .form .row {
     display: flex;
