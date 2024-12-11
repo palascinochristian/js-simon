@@ -134,3 +134,14 @@ input {
     display: none;
 }
 
+.bordered-green{
+    border: 2px solid forestgreen;
+}
+.bordered-orange{
+    border: 2px solid orange;
+}
+
+.bordered-red{
+    border: 2px solid red;
+}
+

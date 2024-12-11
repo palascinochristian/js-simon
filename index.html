@@ -28,7 +28,7 @@
             </div>
         </section>
 
-        <section class="timer box box-sm">
+        <section id ="timerbox" class="timer box box-sm">
             <div class="row">
                 <div class="col">
                     <strong id="timer">30</strong>
@@ -37,7 +37,7 @@
 
 
         </section>
-        <section id="form" class="form box box-xl">
+        <section id="form" class="form box box-xl d-none">
             <h1>Inserisci tutti i numeri che ricordi (l'ordine non è importante)</h1>
             <form id="userForm" class="row">
                 <div class="col">
@@ -61,12 +61,11 @@
                 </div>
             </form>
         </section>
-        <section id="result" class="form box box-xl">
+        <section id="result" class="form box box-xl d-none">
             <div class="row">
                 <div class="col">
-                    <span id="winOrLose">Hai indovinato 3 numeri:</span>
-                    <span id="guessedNum"> 21 , 45 , 22</span></div>
-                    <span class="d-none" id="error">Devi inserire un numero corretto</span>
+                    <span id="winOrLose"></span>
+                    <strong id="guessedNum"></strong></div>
             </div>
         </section>
 
