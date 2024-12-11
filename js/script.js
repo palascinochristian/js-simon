@@ -33,7 +33,8 @@ const randomNumGen = (min, max) => {
 -------------- */
 const randomNumList = [];
 let seconds = 30;
-
+const guessedNumList = [];
+let userNumbersList = [];
 
 
 // Ciclo per generare 5 numeri casuali
@@ -41,6 +42,12 @@ for (let i = 0; i < 5; i++) {
     let number = randomNumGen(1, 100);
     randomNumList.push(Number(number));
 }
+
+
+//OUT FORM PRINT
+
+//stampo l'array di numeri casuali
+randomNum.innerHTML = randomNumList.join(" ");
 
 /*-------------
     TIMING
@@ -65,10 +72,45 @@ let time = setInterval(() => {
 },31000)
 
 
-//OUT FORM PRINT
 
-//stampo l'array di numeri casuali
-randomNum.innerHTML = randomNumList.join(" ");
+/*-------------
+     EVENTS
+ -------------- */
+
+ userForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+ 
+// Inserisco i numeri che inserisce l'utente dentro un array
+
+let userNumbersList = [
+    Number(userNum1.value),
+    Number(userNum2.value),
+    Number(userNum3.value),
+    Number(userNum4.value),
+    Number(userNum5.value),
+];
+ 
+// Confronto i numeri generati casualmente con quelli inseriti dall'utente
+const matches = userNumbersList.filter((num) => randomNumList.includes(num));
+
+// Stampare i risultati
+guessedNum.innerHTML = matches.join(" "); 
+    if (matches.length > 0) {
+        winOrLose.innerHTML = `Hai indovinato ${matches.length} numero/i!`;
+        resultBox.classList.add("bordered-green");
+        resultBox.classList.remove("bordered-orange");
+        resultBox.classList.remove("bordered-red")
+        resultBox.classList.remove("d-none");
+    } else {
+        winOrLose.innerHTML = "Non hai indovinato nessun numero.";
+        resultBox.classList.add("bordered-orange")
+        resultBox.classList.remove("bordered-green")
+        resultBox.classList.remove("bordered-red")
+        resultBox.classList.remove("d-none")
+    }
+});
+
 
 
 
