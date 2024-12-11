@@ -80,6 +80,25 @@ let time = setInterval(() => {
  userForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
+ // Bonus Validazione: verifico che tutti i campi siano compilati e contengano numeri
+ const inputs = [userNum1, userNum2, userNum3, userNum4, userNum5];
+ let allValid = true;
+
+ for (let i = 0; i < inputs.length; i++) {
+     if (inputs[i].value === "" || isNaN(Number(inputs[i].value))) {
+         allValid = false;
+         break;
+     }
+ }
+ 
+ if (!allValid) {
+     winOrLose.innerHTML = "Per favore, inserisci SOLO numeri validi in tutti i campi.";
+     resultBox.classList.add("bordered-red");
+     resultBox.classList.remove("bordered-green");
+     resultBox.classList.remove("bordered-orange");
+     resultBox.classList.remove("d-none");
+     return;
+ }
  
 // Inserisco i numeri che inserisce l'utente dentro un array
 
