@@ -42,6 +42,10 @@ for (let i = 0; i < 5; i++) {
     randomNumList.push(Number(number));
 }
 
+/*-------------
+    TIMING
+-------------- */
+
 // Countdown
 let time = setInterval(() => {
     if (seconds == 0) {
@@ -54,6 +58,12 @@ let time = setInterval(() => {
     }
     seconds--;
 }, 1000)
+
+ //Al termine dei secondi , nascondo dall'elemento html i numeri!
+ setTimeout(()=>{
+    randomNum.innerHTML = "Non si bara!";
+},31000)
+
 
 //OUT FORM PRINT
 
