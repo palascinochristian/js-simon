@@ -32,7 +32,6 @@ body {
 .numbers .row, .timer .row {
     display: flex;
     justify-content: space-around;
-    align-content: center;
     height: auto;
 }
 
