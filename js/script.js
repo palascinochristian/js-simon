@@ -33,7 +33,6 @@ const randomNumGen = (min, max) => {
 -------------- */
 const randomNumList = [];
 let seconds = 30;
-const guessedNumList = [];
 let userNumbersList = [];
 
 
